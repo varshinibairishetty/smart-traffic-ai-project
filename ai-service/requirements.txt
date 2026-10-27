@@ -1,0 +1,26 @@
+# ai-service/requirements.txt
+#
+# Python dependencies for the Smart Traffic AI service.
+#
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# ⚠️  First-time install note:
+#   ultralytics pulls in PyTorch (~2 GB download on CPU-only Windows).
+#   This is normal — it only downloads once and is cached locally.
+#   The YOLO model weights (yolov8n.pt, ~6 MB) download automatically
+#   on the first detection call.
+
+# ── Web framework ────────────────────────────────────────────────────────
+fastapi>=0.100.0          # HTTP framework — defines routes and validates responses
+uvicorn[standard]>=0.23.0 # ASGI server — runs FastAPI (like Node's http module)
+
+# ── Computer vision & detection ──────────────────────────────────────────
+ultralytics>=8.0.0        # YOLO v8 — includes PyTorch as a dependency
+opencv-python>=4.8.0      # OpenCV — reads video files and individual frames
+
+# ── Data validation ──────────────────────────────────────────────────────
+pydantic>=2.0.0           # FastAPI uses this to validate and serialize JSON
+
+# ── Utilities ────────────────────────────────────────────────────────────
+python-multipart>=0.0.6   # Enables FastAPI file upload endpoints (Phase 3+)
