@@ -77,6 +77,8 @@ smart-traffic-ai-project/
 │
 ├── README.md                   ← Project overview and setup
 ├── AGENTS.md                   ← Coding instructions for AI assistants
+├── docker-compose.yml          ← Multi-container orchestration (Backend + AI service)
+├── .dockerignore               ← Container build context exclusions
 ├── package.json                ← Root workspace script shortcuts
 ├── .gitignore                  ← Git exclusion rules
 │
@@ -98,12 +100,14 @@ smart-traffic-ai-project/
 │   └── vite.config.js
 │
 ├── backend/                    ← Node.js + Express API
+│   ├── Dockerfile              ← Multi-stage container file (builds React & runs Express)
 │   ├── utils/riskCalculator.js ← Deterministic risk calculation helper
 │   ├── server.js               ← API server implementation
 │   ├── .env.example            ← Environment variable template
 │   └── package.json
 │
 └── ai-service/                 ← Python FastAPI vehicle detection service
+    ├── Dockerfile              ← Container file for FastAPI + YOLOv8 + OpenCV
     ├── detector.py             ← YOLOv8 frame inference logic
     ├── main.py                 ← FastAPI web routes
     ├── config.py               ← Model settings and path configurations
@@ -154,6 +158,18 @@ npm install
 npm run dev
 ```
 Dashboard runs at `http://localhost:5173`. If the backend is running, it streams live detection data; if unreachable, it displays fallback sample data automatically.
+
+### 4. Containerized Execution (Docker Compose)
+
+To launch the entire end-to-end multi-service stack in isolated containers:
+
+```bash
+docker-compose up --build
+```
+
+- **Frontend Dashboard & Backend API:** `http://localhost:5000`
+- **FastAPI YOLO Service:** `http://localhost:8000`
+- **Interactive Swagger Docs:** `http://localhost:8000/docs`
 
 ---
 

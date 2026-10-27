@@ -8,45 +8,78 @@
 #   # Option A — use the default sample video path (config.py):
 #   python test_detection.py
 #
-#   # Option B — specify any .mp4 on your machine:
-#   python test_detection.py "C:/Users/varsh/Videos/traffic.mp4"
+#   # Option B — stream detections live over Socket.io to Express backend (port 5000):
+#   python test_detection.py --socket
 #
-# Expected output:
-#   - A progress log showing which frames are being processed
-#   - A summary of how many vehicles were detected
-#   - A file called detection_output.json with the full results
+#   # Option C — specify any .mp4 on your machine:
+#   python test_detection.py "C:/Users/varsh/Videos/traffic.mp4" --socket
 
+import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 
 def main():
-    # Use a command-line argument as the video path, or fall back to the default
-    if len(sys.argv) > 1:
-        video_path = sys.argv[1]
+    parser = argparse.ArgumentParser(description="Smart Traffic AI — Detection Test & Live Socket Streamer")
+    parser.add_argument("video_path", nargs="?", default=None, help="Optional path to MP4 video")
+    parser.add_argument("--socket", "-s", action="store_true", help="Stream frames live via Socket.io to backend")
+    parser.add_argument("--url", default="http://localhost:5000", help="Socket.io server URL (default: http://localhost:5000)")
+    parser.add_argument("--delay", type=float, default=0.4, help="Delay in seconds between frames when streaming (default: 0.4s)")
+    parser.add_argument("--frames", type=int, default=10, help="Max frames to process (default: 10)")
+    parser.add_argument("--interval", type=int, default=5, help="Frame interval (default: 5)")
+
+    args = parser.parse_args()
+
+    # Use specified video path or default from config.py
+    if args.video_path:
+        video_path = args.video_path
     else:
-        # Import config here (not at module level) so we get a clear error
-        # if someone runs this from the wrong directory
         from config import DEFAULT_VIDEO_PATH
         video_path = str(DEFAULT_VIDEO_PATH)
 
     print("\n" + "=" * 58)
-    print("  Smart Traffic AI — Standalone Detection Test")
+    print("  Smart Traffic AI — Detection Test")
     print("=" * 58)
-    print(f"  Video : {video_path}")
-    print(f"  Note  : YOLO weights (~6 MB) download on first run.")
+    print(f"  Video   : {video_path}")
+    print(f"  Socket  : {'Enabled (' + args.url + ')' if args.socket else 'Disabled (pass --socket to stream live)'}")
+    print(f"  Note    : YOLO weights (~6 MB) download on first run.")
     print("=" * 58 + "\n")
+
+    # Connect Socket.io client if requested
+    sio = None
+    if args.socket:
+        try:
+            import socketio
+            sio = socketio.Client(reconnection=False)
+            print(f"📡  Connecting to Socket.io backend at {args.url}...")
+            sio.connect(args.url, transports=["websocket", "polling"])
+            print("⚡  Connected to backend! Streaming live frames via 'push_detection_frame'...\n")
+        except Exception as exc:
+            print(f"⚠️  Could not connect to Socket.io server at {args.url}: {exc}")
+            print("    Continuing standalone detection without live socket streaming.\n")
+            sio = None
 
     # Import the detector (this also imports ultralytics — might take a moment)
     from detector import run_detection
 
+    def on_frame_stream(frame_dict, risk_dict):
+        score = risk_dict.get("score", 0)
+        cat = risk_dict.get("category", "N/A")
+        if sio and sio.connected:
+            print(f"  ⚡ [Socket.io] Emitted Frame #{frame_dict.get('frame_index')} "
+                  f"| Vehicles: {frame_dict.get('vehicle_count')} | Rt Risk: {score} ({cat})")
+
     try:
         result = run_detection(
             video_path=video_path,
-            frame_interval=5,   # process every 5th frame
-            max_frames=10,      # limit to 10 frames so the test is quick
+            frame_interval=args.interval,
+            max_frames=args.frames,
             confidence=0.40,
+            socket_client=sio,
+            on_frame=on_frame_stream if args.socket else None,
+            stream_delay=args.delay if (args.socket and sio and sio.connected) else 0.0,
         )
 
     except FileNotFoundError as exc:
@@ -101,6 +134,10 @@ def main():
     print()
     print(f"  Full JSON written to: {out_path.resolve()}")
     print("=" * 58 + "\n")
+
+    if sio is not None and sio.connected:
+        time.sleep(0.5)
+        sio.disconnect()
 
 
 if __name__ == "__main__":

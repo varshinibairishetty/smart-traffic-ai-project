@@ -105,6 +105,19 @@ def calculate_risk_score(detection_data: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def calculate_frame_risk(frame_data: Dict[str, Any], avg_vehicles: float = None) -> Dict[str, Any]:
+    """
+    Convenience helper to calculate risk score (Rt) for an individual frame.
+    """
+    count = frame_data.get("vehicle_count", 0)
+    avg_count = avg_vehicles if avg_vehicles is not None else count
+    detection_payload = {
+        "summary": {"avg_vehicles_per_frame": avg_count},
+        "frames": [frame_data],
+    }
+    return calculate_risk_score(detection_payload)
+
+
 if __name__ == "__main__":
     test_data = {
         "summary": {"avg_vehicles_per_frame": 15.0, "by_class": {"car": 141, "truck": 8, "bus": 1}},

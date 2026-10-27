@@ -87,9 +87,11 @@ class DetectResponse(BaseModel):
 
 # ─── GET /health  response ─────────────────────────────────────────────────
 class HealthResponse(BaseModel):
-    """Service health status returned by GET /health."""
-    status:       str  # "ok" when everything is fine
+    """Service health status returned by GET /health for container orchestration."""
+    status:       str  # "ok" or "healthy" when ready
     model_loaded: bool # True once YOLOv8n is loaded into memory
     model_name:   str
     service:      str
-    note:         str
+    note:         Optional[str] = None
+    timestamp:    Optional[str] = None
+    checks:       Optional[Dict[str, Any]] = None

@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "minRiskScore": 70,
+  "channels": {
+    "email": true,
+    "sms": true,
+    "webhook": true
+  },
+  "recipients": {
+    "email": "controlroom@traffic.hyderabad.gov.in",
+    "sms": "+91-9876543210"
+  },
+  "webhookUrl": "http://localhost:5000/api/notifications/mock-webhook"
+}

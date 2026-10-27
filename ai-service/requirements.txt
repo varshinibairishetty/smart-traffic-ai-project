@@ -24,3 +24,5 @@ pydantic>=2.0.0           # FastAPI uses this to validate and serialize JSON
 
 # ── Utilities ────────────────────────────────────────────────────────────
 python-multipart>=0.0.6   # Enables FastAPI file upload endpoints (Phase 3+)
+python-socketio[client]>=5.11.0 # Real-time Socket.io client for pushing live frames
+websocket-client>=1.6.0   # WebSocket transport for python-socketio

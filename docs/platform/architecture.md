@@ -71,26 +71,58 @@
   - [`frontend/src/components/CongestionStatus.jsx`](frontend/src/components/CongestionStatus.jsx): Road segment distribution and status bars.
   - [`frontend/src/components/VehicleBreakdown.jsx`](frontend/src/components/VehicleBreakdown.jsx): Proportional vehicle category distribution.
   - [`frontend/src/components/DetectionLog.jsx`](frontend/src/components/DetectionLog.jsx): Table displaying recent frame detections.
+  - [`frontend/src/components/SimulationPanel.jsx`](frontend/src/components/SimulationPanel.jsx): Floating persistent simulation control panel for one-click testing of live map markers and risk scores.
+  - [`frontend/src/pages/LiveMap.jsx`](frontend/src/pages/LiveMap.jsx): Interactive Leaflet map with real-time colored zone risk markers.
 
 ### 4.2 Backend API (`backend/`)
 
 - **State:** Implemented.
+- **Security & Hardening:** Protected with Helmet HTTP headers (CSP, X-Frame-Options), strict origin-checked CORS, and `express-rate-limit` DDOS protection on `/api/` routes.
 - **Configuration:** Managed via `backend/.env` (default `PORT=5000`, `CORS_ORIGIN=http://localhost:5173`).
 - **Endpoints:**
 
 | Method | Endpoint | Status | Description |
 |---|---|---|---|
-| `GET` | `/` | Implemented | Service metadata and available route listing |
-| `GET` | `/api/health` | Implemented | Service health status and detection file presence check |
+| `GET` | `/` | Implemented | Service metadata or static React production dashboard |
+| `GET` | `/api` | Implemented | Dedicated API Directory listing and service metadata |
+| `POST` | `/api/auth/register` | Implemented | User registration with bcrypt-hashed passwords and JWT issuance |
+| `POST` | `/api/auth/login` | Implemented | User login verifying credentials and returning user profile + JWT token |
+| `GET` | `/api/auth/me` | Implemented | Returns authenticated user session payload (requires Bearer token) |
+| `GET` | `/health` | Implemented | Container orchestration healthcheck with storage, stream, and memory metrics |
+| `GET` | `/api/health` | Implemented | Service health status and subsystem checks |
 | `GET` | `/api/detections` | Implemented | Full detection results combined with calculated risk assessment |
 | `GET` | `/api/detections/latest` | Implemented | Summary and latest frame vehicle metrics |
 | `GET` | `/api/risk` | Implemented | Standalone rule-based risk assessment object |
+| `GET` | `/api/zones` | Implemented | Hyderabad regional nodes with derived risk scores and geofence polygons |
+| `GET` | `/api/geofences` | Implemented | Spatial bounding boxes, perimeter coordinates, and sub-zone metadata |
+| `GET` | `/api/incidents` | Implemented | Persistent incident logs with filtering (`status`, `zone_id`, `severity`) |
+| `GET` | `/api/incidents/analytics` | Implemented | Aggregated incident statistics (by location, severity, resolution rate) |
+| `GET` | `/api/analytics/summary` | Implemented | Comprehensive historical analytics & time-series data for dashboard charts |
+| `PATCH` | `/api/incidents/:id/status` | Implemented | Update incident lifecycle status (`Active` / `Resolved`) — **Requires Admin** |
+| `POST` | `/api/incidents/:id/resolve` | Implemented | Convenience endpoint to resolve an active incident — **Requires Admin** |
+| `GET` | `/api/cameras` | Implemented | Multi-camera metadata for surveillance grid (VID-001 to VID-005) |
+| `GET` | `/api/cameras/:id/stream` | Implemented | Multipart/x-mixed-replace MJPEG video stream endpoint |
+| `GET` | `/api/notifications` | Implemented | Dispatched notification audit logs with channel and severity filters |
+| `GET` | `/api/notifications/config` | Implemented | Outgoing notification channel status and risk threshold configuration |
+| `PATCH`| `/api/notifications/config` | Implemented | Update notification channels, risk threshold ($R_t \ge 70$), and webhook URL |
+| `POST` | `/api/notifications/test` | Implemented | Trigger synthetic test alert dispatch across active channels |
+| `POST` | `/api/notifications/mock-webhook` | Implemented | Municipal Police Webhook receiver simulation endpoint |
+| `GET` | `/api/demo/scenarios` | Implemented | Available test/viva presentation simulation scenarios |
+| `POST` | `/api/demo/scenario` | Implemented | Activate or reset a simulation scenario override — **Requires Admin** |
+| `WS`  | `live_traffic_update` | Implemented | Periodic & frame-triggered Socket.io broadcast to all clients |
+| `WS`  | `push_detection_frame` | Implemented | Ingestion event accepted from Python YOLO socket client |
+| `WS`  | `trigger_scenario` | Implemented | Real-time scenario switch event accepted from clients — **Requires Admin** |
+| `WS`  | `resolve_incident` | Implemented | Instant incident status resolution event accepted from clients — **Requires Admin** |
+| `WS`  | `notification_dispatched` | Implemented | Real-time broadcast whenever an incident alert is dispatched to channels |
 
 ### 4.3 AI Service (`ai-service/`)
 
 - **State:** Implemented (code complete; requires local Python virtual environment activation).
 - **Core Files:**
-  - [`ai-service/detector.py`](ai-service/detector.py): Video decoding and YOLO inference pipeline.
+  - [`ai-service/detector.py`](ai-service/detector.py): Video decoding and YOLO inference pipeline with per-frame risk scoring and optional socket streaming.
+  - [`ai-service/socket_client.py`](ai-service/socket_client.py): Python Socket.io client emitting `push_detection_frame` live events.
+  - [`ai-service/scenario_runner.py`](ai-service/scenario_runner.py): Viva presentation test and demo scenario runner with automated sequence tour.
+  - [`ai-service/test_detection.py`](ai-service/test_detection.py): Standalone CLI test script with `--socket` streaming flag.
   - [`ai-service/main.py`](ai-service/main.py): FastAPI web application with lifespan model caching.
   - [`ai-service/schemas.py`](ai-service/schemas.py): Pydantic validation schemas.
   - [`ai-service/risk_calculator.py`](ai-service/risk_calculator.py): Python reference implementation of the risk formula.

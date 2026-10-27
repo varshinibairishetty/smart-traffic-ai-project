@@ -4,9 +4,13 @@
   "private": true,
   "description": "Smart Traffic Management and Accident Risk Prediction System",
   "scripts": {
+    "start": "node backend/server.js",
+    "test": "cd backend && npm test",
+    "test:backend": "cd backend && npm test",
     "dev:backend": "cd backend && npm start",
     "dev:frontend": "cd frontend && npm run dev",
-    "build:frontend": "cd frontend && npm run build"
+    "build:frontend": "cd frontend && npm run build",
+    "build": "cd frontend && npm run build"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

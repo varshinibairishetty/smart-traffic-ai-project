@@ -22,7 +22,7 @@ import logging
 import time
 from collections import defaultdict
 from pathlib import Path
-from typing import Optional
+from typing import Any, Callable, Optional
 
 import cv2
 from ultralytics import YOLO
@@ -35,6 +35,7 @@ from config import (
     VEHICLE_CLASS_IDS,
     VEHICLE_CLASS_NAMES,
 )
+from risk_calculator import calculate_frame_risk
 from schemas import BoundingBox, DetectResponse, FrameResult, VehicleDetection
 
 logger = logging.getLogger(__name__)
@@ -65,19 +66,27 @@ def is_model_loaded() -> bool:
 
 # ── Main detection function ────────────────────────────────────────────────
 def run_detection(
-    video_path: str,
+    video_path:     str,
     frame_interval: int   = FRAME_INTERVAL,
     max_frames:     int   = MAX_FRAMES,
     confidence:     float = CONFIDENCE_THRESHOLD,
+    on_frame:       Optional[Callable[[dict, dict], None]] = None,
+    socket_client:  Optional[Any] = None,
+    stream_delay:   float = 0.0,
 ) -> DetectResponse:
     """
     Open a video file, run YOLO on sampled frames, and return structured results.
+    Optionally computes rule-based risk (Rt) per frame and emits 'push_detection_frame'
+    via a Socket.io client instance.
 
     Args:
         video_path:     Path to the .mp4 (or any OpenCV-supported) video file.
         frame_interval: Process 1 frame every N frames (default 5).
         max_frames:     Stop after processing this many frames (default 30).
         confidence:     Only keep detections above this threshold (default 0.40).
+        on_frame:       Optional callback function(frame_dict, risk_dict) for each frame.
+        socket_client:  Optional connected socketio.Client instance to push live frames.
+        stream_delay:   Optional sleep delay in seconds between frames for live demo pace.
 
     Returns:
         DetectResponse — Pydantic model with per-frame results + summary.
@@ -170,17 +179,49 @@ def run_detection(
                 )
                 class_totals[class_name] += 1
 
-        frame_results.append(
-            FrameResult(
-                frame_index=frame_index,
-                timestamp_sec=timestamp_sec,
-                vehicle_count=len(detected_vehicles),
-                vehicles=detected_vehicles,
-            )
+        frame_obj = FrameResult(
+            frame_index=frame_index,
+            timestamp_sec=timestamp_sec,
+            vehicle_count=len(detected_vehicles),
+            vehicles=detected_vehicles,
         )
-
+        frame_results.append(frame_obj)
         frames_processed += 1
+
+        # Calculate running rule-based risk score (Rt) for this processed frame
+        running_avg = sum(r.vehicle_count for r in frame_results) / len(frame_results)
+        frame_dict = frame_obj.model_dump()
+        frame_risk = calculate_frame_risk(frame_dict, avg_vehicles=running_avg)
+
+        # Notify callback if provided
+        if on_frame is not None:
+            try:
+                on_frame(frame_dict, frame_risk)
+            except Exception as exc:
+                logger.warning("on_frame callback error: %s", exc)
+
+        # Emit 'push_detection_frame' over Socket.io if client provided and connected
+        if socket_client is not None:
+            is_connected = getattr(socket_client, "connected", False)
+            if is_connected:
+                payload = {
+                    "source": path.name,
+                    "frame_index": frame_index,
+                    "timestamp_sec": timestamp_sec,
+                    "vehicle_count": len(detected_vehicles),
+                    "vehicles": [v.model_dump() for v in detected_vehicles],
+                    "risk": frame_risk,
+                }
+                try:
+                    socket_client.emit("push_detection_frame", payload)
+                    logger.debug("Emitted push_detection_frame for frame %d", frame_index)
+                except Exception as exc:
+                    logger.warning("Failed to emit push_detection_frame: %s", exc)
+
         logger.debug("  frame=%d ts=%.2fs vehicles=%d", frame_index, timestamp_sec, len(detected_vehicles))
+
+        if stream_delay > 0:
+            time.sleep(stream_delay)
 
     # Always release the file handle — prevents resource leaks
     cap.release()

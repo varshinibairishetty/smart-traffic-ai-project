@@ -112,20 +112,42 @@ def root():
 @app.get(
     "/health",
     response_model=HealthResponse,
-    summary="Health check",
+    summary="Health check for Docker container orchestration",
 )
 def health():
     """
-    Returns whether the service is running and whether the YOLO model
-    is loaded into memory. Call this first to confirm everything is ready
-    before sending a detection request.
+    Returns whether the service is running, whether the YOLO model
+    is loaded into memory, and file access readiness for container HEALTHCHECK.
     """
+    from datetime import datetime, timezone
+    import os
+
+    output_path = os.path.join(os.path.dirname(__file__), "detection_output.json")
+    sample_video_exists = os.path.exists(str(DEFAULT_VIDEO_PATH))
+    detection_output_exists = os.path.exists(output_path)
+    model_loaded = is_model_loaded()
+
+    status = "ok" if model_loaded else "degraded"
+
     return HealthResponse(
-        status="ok",
-        model_loaded=is_model_loaded(),
+        status=status,
+        model_loaded=model_loaded,
         model_name=MODEL_NAME,
-        service="Smart Traffic AI — Vehicle Detection Service v0.2.0",
-        note="Phase 2 — no risk model, database, or frontend integration yet.",
+        service="Smart Traffic AI — Vehicle Detection Service v0.3.0",
+        note="Computer vision inference engine ready.",
+        timestamp=datetime.now(timezone.utc).isoformat(),
+        checks={
+            "model": {
+                "name": MODEL_NAME,
+                "loaded": model_loaded,
+                "target_classes": ["car", "truck", "bus", "motorcycle"]
+            },
+            "filesystem": {
+                "sample_video_path": str(DEFAULT_VIDEO_PATH),
+                "sample_video_accessible": sample_video_exists,
+                "detection_output_accessible": detection_output_exists
+            }
+        }
     )
 
 

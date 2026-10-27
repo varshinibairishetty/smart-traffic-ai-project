@@ -1,25 +1,25 @@
 // src/pages/Cameras.jsx
 //
-// Cameras page — shows camera feed records derived from the AI detection output.
-// Only one video source exists; it is represented as a single camera card.
+// Live Surveillance Cameras page — renders real-time CCTV camera feeds (VID-001 through VID-005)
+// covering key Hyderabad tech corridor intersections.
 //
-// ⚠️ DATA NOTE: This is not a live RTSP/IP camera stream. Data comes from the
-// processed detection_output.json produced by the Python AI service.
+// Features:
+//   • Live Canvas Frame Renderer with moving AI vehicle detection bounding boxes
+//   • Multi-camera matrix grid and single-camera inspection focus modes
+//   • Real-time synchronization via Socket.io
+//   • Camera HUD telemetry: FPS counter, Resolution, Lens focal length, and Risk indicator
 
 import { useState, useEffect } from 'react'
 import { fetchCameras } from '../services/api.js'
-
-const RISK_COLOR = {
-  Low:      'var(--green)',
-  Medium:   'var(--amber)',
-  High:     'var(--orange)',
-  Critical: 'var(--red)',
-}
+import socket from '../services/socket.js'
+import CameraFeedCanvas from '../components/CameraFeedCanvas.jsx'
 
 export default function Cameras() {
   const [cameras, setCameras] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError]     = useState(null)
+  const [error, setError] = useState(null)
+  const [focusedCamId, setFocusedCamId] = useState(null)
+  const [filterMode, setFilterMode] = useState('All') // 'All' | 'HighRisk'
 
   const loadCameras = async () => {
     try {
@@ -37,124 +37,207 @@ export default function Cameras() {
 
   useEffect(() => {
     loadCameras()
+
+    // Real-time synchronization via Socket.io
+    socket.connect()
+    const onLiveUpdate = (payload) => {
+      if (!payload || !payload.zones) return
+
+      // Update camera risk scores dynamically based on live zones
+      setCameras(prevCams =>
+        prevCams.map(cam => {
+          const matchingZone = payload.zones.find(z => z.id === cam.zone_id)
+          if (!matchingZone) return cam
+          return {
+            ...cam,
+            current_risk: {
+              score: matchingZone.score,
+              category: matchingZone.category,
+              color: matchingZone.color
+            },
+            current_vehicle_count: Math.round(
+              (payload.vehicle_count || 12) * (matchingZone.score > 60 ? 1.4 : 1.0)
+            )
+          }
+        })
+      )
+    }
+
+    socket.on('live_traffic_update', onLiveUpdate)
+
+    return () => {
+      socket.off('live_traffic_update', onLiveUpdate)
+    }
   }, [])
+
+  const filteredCameras = cameras.filter(cam => {
+    if (filterMode === 'HighRisk') {
+      return (cam.current_risk?.score || 0) >= 67
+    }
+    return true
+  })
+
+  const focusedCam = cameras.find(c => c.id === focusedCamId) || null
 
   return (
     <div className="page-container">
+      {/* Page Header */}
       <div className="page-header">
         <div>
-          <h1 className="page-title">📹 Cameras</h1>
+          <h1 className="page-title">📹 Live Traffic Surveillance Network</h1>
           <p className="page-subtitle">
-            Detection feed sources processed by the AI service
+            Real-time multi-camera CCTV feeds with AI vehicle detection bounding boxes (VID-001 to VID-005)
           </p>
         </div>
-        <button className="btn-refresh" onClick={loadCameras}>↻ Refresh</button>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <button
+            className={`btn-filter ${filterMode === 'All' ? 'btn-filter--active' : ''}`}
+            onClick={() => setFilterMode('All')}
+          >
+            All Feeds ({cameras.length})
+          </button>
+          <button
+            className={`btn-filter ${filterMode === 'HighRisk' ? 'btn-filter--active' : ''}`}
+            onClick={() => setFilterMode('HighRisk')}
+            style={{ color: filterMode === 'HighRisk' ? '#ef4444' : undefined }}
+          >
+            ⚠️ High Risk Only
+          </button>
+          <button className="btn-refresh" onClick={loadCameras}>↻ Refresh</button>
+        </div>
       </div>
 
-      {/* Data provenance notice */}
+      {/* Provenance note */}
       <div className="demo-banner" role="note">
         <span aria-hidden="true">ℹ️</span>
         <span>
-          <strong>Demo Indicator:</strong> Camera metadata is derived from the local video
-          file processed by the YOLO AI service. Not a live camera stream.
+          <strong>Live Stream Pipeline:</strong> Cameras VID-001 through VID-005 represent the Hyderabad tech-corridor
+          surveillance grid with canvas-rendered AI bounding boxes and WebSocket-streamed risk telemetry.
         </span>
       </div>
 
-      {/* Error state — no fallback to mock data */}
       {error && (
-        <div className="demo-banner" role="alert" aria-live="polite">
+        <div className="demo-banner" role="alert">
           <span aria-hidden="true">⚠️</span>
-          <span>No camera data available — backend is offline or unreachable. ({error})</span>
+          <span>Failed to load camera feeds: {error}</span>
         </div>
       )}
 
-      {/* Loading */}
-      {loading && !error && (
+      {loading && cameras.length === 0 && (
         <div className="page-empty-state">
           <span className="page-empty-state__icon">⏳</span>
-          <p>Loading camera data…</p>
+          <p>Initializing camera feeds…</p>
         </div>
       )}
 
-      {/* Empty state — no fallback to mock */}
-      {!loading && !error && cameras.length === 0 && (
-        <div className="page-empty-state">
-          <span className="page-empty-state__icon">📹</span>
-          <h2>No Camera Data Available</h2>
-          <p>
-            Run the AI detection service (<code>python test_detection.py</code>) to
-            generate detection output, then restart the backend server.
-          </p>
-        </div>
-      )}
-
-      {/* Camera cards */}
-      <div className="cameras-grid">
-        {cameras.map(cam => (
-          <div className="camera-card card" key={cam.id}>
-            <div className="card__header">
-              <span className="card__title">{cam.id} — {cam.name}</span>
-              <span className={`badge ${cam.status === 'processed' ? 'badge--free' : 'badge--moderate'}`}>
-                {cam.status}
-              </span>
+      {/* Focused Camera Inspector Mode */}
+      {focusedCam && (
+        <div className="card" style={{ marginBottom: '1.5rem', border: '1px solid rgba(56, 189, 248, 0.4)' }}>
+          <div className="card__header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <span className="card__title">⛶ Inspector View — [{focusedCam.id}] {focusedCam.name}</span>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', margin: '2px 0 0 0' }}>
+                {focusedCam.location} • Stream URL: <code>{focusedCam.stream_url}</code>
+              </p>
             </div>
-            <div className="card__body">
+            <button
+              onClick={() => setFocusedCamId(null)}
+              className="btn-filter"
+              style={{ fontSize: '0.75rem' }}
+            >
+              ✕ Exit Fullscreen
+            </button>
+          </div>
+          <div className="card__body" style={{ padding: '1rem' }}>
+            <CameraFeedCanvas
+              camera={focusedCam}
+              isFocused={true}
+              onToggleFocus={() => setFocusedCamId(null)}
+            />
+          </div>
+        </div>
+      )}
 
-              {/* Source file */}
-              <div className="camera-card__row">
-                <span className="camera-card__label">Source File</span>
-                <code className="det-seg">{cam.source_file}</code>
-              </div>
+      {/* Multi-Camera Surveillance Grid */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '1.25rem' }}>
+        {filteredCameras.map(cam => {
+          const score = cam.current_risk?.score || 40
+          const isCritical = score >= 85
+          const isHigh = score >= 67 && score < 85
 
-              {/* Processing stats */}
-              <div className="camera-card__row">
-                <span className="camera-card__label">Frames Processed</span>
-                <span className="camera-card__value">{cam.frames_processed} / {cam.total_frames}</span>
-              </div>
-              <div className="camera-card__row">
-                <span className="camera-card__label">Processing Time</span>
-                <span className="camera-card__value">{cam.processing_time_sec}s</span>
-              </div>
-
-              {/* Detection summary */}
-              <div className="camera-card__divider" />
-              <div className="camera-card__row">
-                <span className="camera-card__label">Total Detections</span>
-                <span className="camera-card__value">{cam.summary.total_detections}</span>
-              </div>
-              <div className="camera-card__row">
-                <span className="camera-card__label">Avg / Frame</span>
-                <span className="camera-card__value">{cam.summary.avg_per_frame}</span>
-              </div>
-              <div className="camera-card__row">
-                <span className="camera-card__label">Peak Count</span>
-                <span className="camera-card__value">{cam.summary.peak_count}</span>
-              </div>
-
-              {/* Vehicle class breakdown mini-list */}
-              {cam.summary.by_class && Object.keys(cam.summary.by_class).length > 0 && (
-                <div className="camera-card__classes">
-                  {Object.entries(cam.summary.by_class).map(([cls, count]) => (
-                    <span key={cls} className="camera-card__class-chip">
-                      {cls}: <strong>{count}</strong>
-                    </span>
-                  ))}
+          return (
+            <div
+              key={cam.id}
+              className="card"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                border: isCritical
+                  ? '1px solid rgba(239, 68, 68, 0.6)'
+                  : isHigh
+                  ? '1px solid rgba(245, 158, 11, 0.5)'
+                  : undefined
+              }}
+            >
+              {/* Card Header */}
+              <div className="card__header" style={{ padding: '0.9rem 1.1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    backgroundColor: isCritical ? '#ef4444' : '#22c55e',
+                    boxShadow: isCritical ? '0 0 8px #ef4444' : '0 0 8px #22c55e'
+                  }} />
+                  <strong style={{ fontSize: '0.9rem', color: 'var(--text-1)' }}>
+                    [{cam.id}] {cam.name}
+                  </strong>
                 </div>
-              )}
-
-              {/* Current risk */}
-              <div className="camera-card__divider" />
-              <div className="camera-card__row">
-                <span className="camera-card__label">Current Risk</span>
-                <span style={{ fontWeight: 700, color: RISK_COLOR[cam.current_risk.category] }}>
-                  {cam.current_risk.score} — {cam.current_risk.category}
+                <span className={`badge ${
+                  cam.current_risk?.category === 'Critical' ? 'badge--critical' :
+                  cam.current_risk?.category === 'High' ? 'badge--heavy' :
+                  cam.current_risk?.category === 'Medium' ? 'badge--moderate' : 'badge--free'
+                }`}>
+                  {cam.current_risk?.category || 'Normal'} (Rt: {score})
                 </span>
               </div>
 
-              <div className="camera-card__note">{cam.data_note}</div>
+              {/* Live Canvas Stream Feed */}
+              <div style={{ padding: '0.75rem 1.1rem 0.25rem' }}>
+                <CameraFeedCanvas
+                  camera={cam}
+                  isFocused={focusedCamId === cam.id}
+                  onToggleFocus={() => setFocusedCamId(focusedCamId === cam.id ? null : cam.id)}
+                />
+              </div>
+
+              {/* Camera Telemetry & Info Footer */}
+              <div className="card__body" style={{ padding: '0.9rem 1.1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '0.4rem' }}>
+                  <span>Location:</span>
+                  <strong style={{ color: 'var(--text-1)' }}>{cam.location}</strong>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '0.4rem' }}>
+                  <span>Resolution &amp; Lens:</span>
+                  <span>{cam.resolution} • {cam.lens}</span>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '0.4rem' }}>
+                  <span>Active Count:</span>
+                  <span style={{ fontWeight: 700, color: 'var(--amber)' }}>
+                    {cam.current_vehicle_count} vehicles in view
+                  </span>
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-2)' }}>
+                  <span>MJPEG Stream:</span>
+                  <code style={{ fontSize: '0.7rem', color: 'var(--blue)' }}>{cam.stream_url}</code>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

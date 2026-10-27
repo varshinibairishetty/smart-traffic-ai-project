@@ -1,0 +1,38 @@
+[
+  {
+    "id": "INC-20261027-001",
+    "timestamp": "2026-10-27T16:28:43.062Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-city",
+    "risk_score": 91,
+    "severity": "Critical",
+    "status": "Resolved",
+    "vehicle_count": 23,
+    "description": "Heavy queue spillover at Cyber Towers junction. Signal clearance cycle extended.",
+    "source": "historical_detection"
+  },
+  {
+    "id": "INC-20261027-002",
+    "timestamp": "2026-10-27T17:28:43.063Z",
+    "node_location": "Gachibowli",
+    "zone_id": "gachibowli",
+    "risk_score": 74,
+    "severity": "High",
+    "status": "Resolved",
+    "vehicle_count": 19,
+    "description": "Bus breakdown on outer lane near Bio-Diversity junction. Tow assistance cleared.",
+    "source": "historical_detection"
+  },
+  {
+    "id": "INC-20261027-003",
+    "timestamp": "2026-10-27T17:58:43.063Z",
+    "node_location": "Madhapur",
+    "zone_id": "madhapur",
+    "risk_score": 82,
+    "severity": "High",
+    "status": "Active",
+    "vehicle_count": 21,
+    "description": "Multi-vehicle slow queue near Metro Pillar 1042. High conflict potential.",
+    "source": "live_stream"
+  }
+]
