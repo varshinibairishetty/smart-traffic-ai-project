@@ -255,9 +255,6 @@ body {
    Sticky top bar — stays on screen as you scroll.
 ═══════════════════════════════════════════════════════════════════════════ */
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -790,3 +787,303 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.15); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.28); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   15. NAVIGATION BAR
+   Persistent multi-page nav bar displayed on every route.
+═══════════════════════════════════════════════════════════════════════════ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 2rem;
+  background: rgba(6, 9, 26, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.navbar__logo { font-size: 1.4rem; line-height: 1; }
+
+.navbar__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.navbar__link {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: background var(--t), color var(--t);
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-1);
+}
+
+.navbar__link--active {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--blue);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   16. PAGE LAYOUT (multi-page routes)
+   Shared container, header, and utility classes used by LiveMap, Incidents,
+   and Cameras page components.
+═══════════════════════════════════════════════════════════════════════════ */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.75rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: calc(100vh - 52px);
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin-top: 0.25rem;
+}
+
+.page-timestamp {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  background: var(--bg-pill);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.28rem 0.7rem;
+}
+
+.page-meta {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  padding: 0.1rem 0;
+}
+
+/* Centred empty/loading state */
+.page-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 4rem 2rem;
+  color: var(--text-2);
+}
+
+.page-empty-state__icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.page-empty-state h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.page-empty-state p {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.page-empty-state code {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--teal);
+  background: var(--bg-pill);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   17. LIVE MAP PAGE
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Map colour legend */
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.map-legend__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Leaflet map container */
+.map-wrapper {
+  height: 480px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Leaflet popup content override */
+.map-popup {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 180px;
+}
+
+.map-popup strong {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.map-popup__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-popup__note {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   18. CAMERAS PAGE
+═══════════════════════════════════════════════════════════════════════════ */
+.cameras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: var(--gap);
+}
+
+.camera-card { /* extends .card */ }
+
+.camera-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.camera-card__row:last-of-type {
+  border-bottom: none;
+}
+
+.camera-card__label {
+  color: var(--text-2);
+  font-size: 0.78rem;
+}
+
+.camera-card__value {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.camera-card__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.6rem 0;
+}
+
+.camera-card__classes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.camera-card__class-chip {
+  font-size: 0.72rem;
+  color: var(--text-2);
+  background: var(--bg-pill);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+  font-family: var(--mono);
+}
+
+.camera-card__note {
+  font-size: 0.68rem;
+  color: var(--text-3);
+  font-style: italic;
+  margin-top: 0.8rem;
+  line-height: 1.5;
+}

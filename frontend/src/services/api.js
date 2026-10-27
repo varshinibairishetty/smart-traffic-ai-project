@@ -1,49 +1,46 @@
 // src/services/api.js
 //
-// Client helper to fetch live vehicle detection data from Express backend.
+// Centralised API client for the Smart Traffic Management frontend.
+// All fetch calls target the Express backend on http://localhost:5000.
+// Every function throws on failure so callers can show clean error states.
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
-/**
- * Fetches vehicle detections from the backend.
- * Returns response JSON or throws an Error.
- */
-export async function fetchDetections() {
-  const response = await fetch(`${API_BASE_URL}/detections`, {
-    headers: {
-      'Accept': 'application/json'
-    }
-  });
-
-  if (!response.ok) {
-    let errMessage = `Server returned status ${response.status}`;
-    try {
-      const errData = await response.json();
-      if (errData && errData.message) {
-        errMessage = errData.message;
-      }
-    } catch (_) {
-      // ignore JSON parse error for error response
-    }
-    throw new Error(errMessage);
+async function apiFetch(path) {
+  const res = await fetch(`${BASE_URL}${path}`);
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`API ${path} returned ${res.status}: ${text}`);
   }
-
-  return await response.json();
+  return res.json();
 }
 
-/**
- * Checks backend API health status.
- */
-export async function checkBackendHealth() {
-  const response = await fetch(`${API_BASE_URL}/health`, {
-    headers: {
-      'Accept': 'application/json'
-    }
-  });
+// GET /api/detections
+export async function fetchDetections() {
+  return apiFetch('/api/detections');
+}
 
-  if (!response.ok) {
-    throw new Error(`Health check failed with status ${response.status}`);
-  }
+// GET /api/detections/latest
+export async function fetchLatestDetection() {
+  return apiFetch('/api/detections/latest');
+}
 
-  return await response.json();
+// GET /api/risk
+export async function fetchRisk() {
+  return apiFetch('/api/risk');
+}
+
+// GET /api/zones  — Hyderabad zone coordinates + derived risk scores
+export async function fetchZones() {
+  return apiFetch('/api/zones');
+}
+
+// GET /api/incidents — Frame-level high-density events
+export async function fetchIncidents() {
+  return apiFetch('/api/incidents');
+}
+
+// GET /api/cameras — Camera feed metadata
+export async function fetchCameras() {
+  return apiFetch('/api/cameras');
 }

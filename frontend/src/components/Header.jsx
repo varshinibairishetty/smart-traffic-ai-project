@@ -1,7 +1,8 @@
 // src/components/Header.jsx
 //
-// The sticky top bar that stays visible as you scroll.
-// Shows: project logo | title | backend status indicator | live clock
+// Dashboard sub-header — shows backend connection status and live clock.
+// Sits below the NavBar on the main dashboard page only.
+// Not sticky (NavBar handles the sticky top position).
 
 import { useState, useEffect } from 'react'
 
@@ -19,12 +20,12 @@ export default function Header({ isLive = false, backendError = null }) {
 
   return (
     <header className="header" role="banner">
-      {/* Left side — logo and project name */}
+      {/* Left side — dashboard page title */}
       <div className="header__left">
-        <span className="header__logo" aria-hidden="true">🚦</span>
+        <span className="header__logo" aria-hidden="true">📊</span>
         <div>
-          <div className="header__title">Smart Traffic AI</div>
-          <div className="header__subtitle">Management &amp; Risk Prediction System</div>
+          <div className="header__title">Traffic Dashboard</div>
+          <div className="header__subtitle">Live Detection · Risk Assessment</div>
         </div>
       </div>
 
@@ -43,7 +44,7 @@ export default function Header({ isLive = false, backendError = null }) {
         )}
 
         <div className="header__badge header__badge--phase">
-          Phase 7 · Integrated
+          Phase 8 · Multi-Page
         </div>
 
         <time className="header__clock" dateTime={time.toISOString()} title="Current local time">
