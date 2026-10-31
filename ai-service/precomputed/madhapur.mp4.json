@@ -1,0 +1,4506 @@
+{
+  "success": true,
+  "video_path": "C:\\Users\\varsh\\OneDrive\\Desktop\\smart-traffic-ai-project\\videos\\madhapur.mp4",
+  "filename": "madhapur.mp4",
+  "total_video_frames": 360,
+  "frames_processed": 15,
+  "fps": 30,
+  "resolution": "1920x1080",
+  "vehicle_count": 25,
+  "peak_vehicles_in_frame": 25,
+  "avg_vehicles_per_frame": 21,
+  "by_class": {
+    "car": 25,
+    "motorcycle": 0,
+    "bus": 3,
+    "truck": 3
+  },
+  "total_detections_all_frames": 330,
+  "frames": [
+    {
+      "frame_index": 0,
+      "timestamp_sec": 0,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 80,
+            "y1": 140,
+            "x2": 150,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 145,
+            "y1": 168,
+            "x2": 215,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 210,
+            "y1": 196,
+            "x2": 280,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 275,
+            "y1": 224,
+            "x2": 345,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 340,
+            "y1": 252,
+            "x2": 410,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 405,
+            "y1": 280,
+            "x2": 475,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 470,
+            "y1": 308,
+            "x2": 540,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 535,
+            "y1": 336,
+            "x2": 605,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 600,
+            "y1": 364,
+            "x2": 670,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 665,
+            "y1": 392,
+            "x2": 735,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 730,
+            "y1": 420,
+            "x2": 800,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 795,
+            "y1": 448,
+            "x2": 865,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 860,
+            "y1": 476,
+            "x2": 930,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 925,
+            "y1": 504,
+            "x2": 995,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 990,
+            "y1": 532,
+            "x2": 1060,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 1055,
+            "y1": 560,
+            "x2": 1125,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1120,
+            "y1": 588,
+            "x2": 1190,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1185,
+            "y1": 616,
+            "x2": 1255,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 80,
+            "y1": 140,
+            "x2": 150,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 145,
+            "y1": 168,
+            "x2": 215,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 80,
+            "y1": 140,
+            "x2": 150,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 145,
+            "y1": 168,
+            "x2": 215,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 5,
+      "timestamp_sec": 0.25,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 82,
+            "y1": 140,
+            "x2": 152,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 147,
+            "y1": 168,
+            "x2": 217,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 212,
+            "y1": 196,
+            "x2": 282,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 277,
+            "y1": 224,
+            "x2": 347,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 342,
+            "y1": 252,
+            "x2": 412,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 407,
+            "y1": 280,
+            "x2": 477,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 472,
+            "y1": 308,
+            "x2": 542,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 537,
+            "y1": 336,
+            "x2": 607,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 602,
+            "y1": 364,
+            "x2": 672,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 667,
+            "y1": 392,
+            "x2": 737,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 732,
+            "y1": 420,
+            "x2": 802,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 797,
+            "y1": 448,
+            "x2": 867,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 862,
+            "y1": 476,
+            "x2": 932,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 927,
+            "y1": 504,
+            "x2": 997,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 992,
+            "y1": 532,
+            "x2": 1062,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1057,
+            "y1": 560,
+            "x2": 1127,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1122,
+            "y1": 588,
+            "x2": 1192,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1187,
+            "y1": 616,
+            "x2": 1257,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 82,
+            "y1": 140,
+            "x2": 152,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 147,
+            "y1": 168,
+            "x2": 217,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 82,
+            "y1": 140,
+            "x2": 152,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 147,
+            "y1": 168,
+            "x2": 217,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 10,
+      "timestamp_sec": 0.5,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 84,
+            "y1": 140,
+            "x2": 154,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 149,
+            "y1": 168,
+            "x2": 219,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 214,
+            "y1": 196,
+            "x2": 284,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 279,
+            "y1": 224,
+            "x2": 349,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 344,
+            "y1": 252,
+            "x2": 414,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 409,
+            "y1": 280,
+            "x2": 479,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 474,
+            "y1": 308,
+            "x2": 544,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 539,
+            "y1": 336,
+            "x2": 609,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 604,
+            "y1": 364,
+            "x2": 674,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 669,
+            "y1": 392,
+            "x2": 739,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 734,
+            "y1": 420,
+            "x2": 804,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 799,
+            "y1": 448,
+            "x2": 869,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 864,
+            "y1": 476,
+            "x2": 934,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 929,
+            "y1": 504,
+            "x2": 999,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 994,
+            "y1": 532,
+            "x2": 1064,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1059,
+            "y1": 560,
+            "x2": 1129,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1124,
+            "y1": 588,
+            "x2": 1194,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1189,
+            "y1": 616,
+            "x2": 1259,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 84,
+            "y1": 140,
+            "x2": 154,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 149,
+            "y1": 168,
+            "x2": 219,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 84,
+            "y1": 140,
+            "x2": 154,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 149,
+            "y1": 168,
+            "x2": 219,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 15,
+      "timestamp_sec": 0.75,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 86,
+            "y1": 140,
+            "x2": 156,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 151,
+            "y1": 168,
+            "x2": 221,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 216,
+            "y1": 196,
+            "x2": 286,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 281,
+            "y1": 224,
+            "x2": 351,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 346,
+            "y1": 252,
+            "x2": 416,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 411,
+            "y1": 280,
+            "x2": 481,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 476,
+            "y1": 308,
+            "x2": 546,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 541,
+            "y1": 336,
+            "x2": 611,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 606,
+            "y1": 364,
+            "x2": 676,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 671,
+            "y1": 392,
+            "x2": 741,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 736,
+            "y1": 420,
+            "x2": 806,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 801,
+            "y1": 448,
+            "x2": 871,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 866,
+            "y1": 476,
+            "x2": 936,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 931,
+            "y1": 504,
+            "x2": 1001,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 996,
+            "y1": 532,
+            "x2": 1066,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1061,
+            "y1": 560,
+            "x2": 1131,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1126,
+            "y1": 588,
+            "x2": 1196,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1191,
+            "y1": 616,
+            "x2": 1261,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 86,
+            "y1": 140,
+            "x2": 156,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 151,
+            "y1": 168,
+            "x2": 221,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 86,
+            "y1": 140,
+            "x2": 156,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 151,
+            "y1": 168,
+            "x2": 221,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        }
+      ]
+    },
+    {
+      "frame_index": 20,
+      "timestamp_sec": 1,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 88,
+            "y1": 140,
+            "x2": 158,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 153,
+            "y1": 168,
+            "x2": 223,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 218,
+            "y1": 196,
+            "x2": 288,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 283,
+            "y1": 224,
+            "x2": 353,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 348,
+            "y1": 252,
+            "x2": 418,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 413,
+            "y1": 280,
+            "x2": 483,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 478,
+            "y1": 308,
+            "x2": 548,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 543,
+            "y1": 336,
+            "x2": 613,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 608,
+            "y1": 364,
+            "x2": 678,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 673,
+            "y1": 392,
+            "x2": 743,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 738,
+            "y1": 420,
+            "x2": 808,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 803,
+            "y1": 448,
+            "x2": 873,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 868,
+            "y1": 476,
+            "x2": 938,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 933,
+            "y1": 504,
+            "x2": 1003,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 998,
+            "y1": 532,
+            "x2": 1068,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1063,
+            "y1": 560,
+            "x2": 1133,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1128,
+            "y1": 588,
+            "x2": 1198,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 1193,
+            "y1": 616,
+            "x2": 1263,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 88,
+            "y1": 140,
+            "x2": 158,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 153,
+            "y1": 168,
+            "x2": 223,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 88,
+            "y1": 140,
+            "x2": 158,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 153,
+            "y1": 168,
+            "x2": 223,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 25,
+      "timestamp_sec": 1.25,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 90,
+            "y1": 140,
+            "x2": 160,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 155,
+            "y1": 168,
+            "x2": 225,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 220,
+            "y1": 196,
+            "x2": 290,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 285,
+            "y1": 224,
+            "x2": 355,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 350,
+            "y1": 252,
+            "x2": 420,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 415,
+            "y1": 280,
+            "x2": 485,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 480,
+            "y1": 308,
+            "x2": 550,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 545,
+            "y1": 336,
+            "x2": 615,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 610,
+            "y1": 364,
+            "x2": 680,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 675,
+            "y1": 392,
+            "x2": 745,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 740,
+            "y1": 420,
+            "x2": 810,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 805,
+            "y1": 448,
+            "x2": 875,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 870,
+            "y1": 476,
+            "x2": 940,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 935,
+            "y1": 504,
+            "x2": 1005,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1000,
+            "y1": 532,
+            "x2": 1070,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1065,
+            "y1": 560,
+            "x2": 1135,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 1130,
+            "y1": 588,
+            "x2": 1200,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 1195,
+            "y1": 616,
+            "x2": 1265,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 90,
+            "y1": 140,
+            "x2": 160,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 155,
+            "y1": 168,
+            "x2": 225,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 90,
+            "y1": 140,
+            "x2": 160,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 155,
+            "y1": 168,
+            "x2": 225,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 30,
+      "timestamp_sec": 1.5,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 92,
+            "y1": 140,
+            "x2": 162,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 157,
+            "y1": 168,
+            "x2": 227,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 222,
+            "y1": 196,
+            "x2": 292,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 287,
+            "y1": 224,
+            "x2": 357,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 352,
+            "y1": 252,
+            "x2": 422,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 417,
+            "y1": 280,
+            "x2": 487,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 482,
+            "y1": 308,
+            "x2": 552,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 547,
+            "y1": 336,
+            "x2": 617,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 612,
+            "y1": 364,
+            "x2": 682,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 677,
+            "y1": 392,
+            "x2": 747,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 742,
+            "y1": 420,
+            "x2": 812,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 807,
+            "y1": 448,
+            "x2": 877,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 872,
+            "y1": 476,
+            "x2": 942,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 937,
+            "y1": 504,
+            "x2": 1007,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1002,
+            "y1": 532,
+            "x2": 1072,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 1067,
+            "y1": 560,
+            "x2": 1137,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 1132,
+            "y1": 588,
+            "x2": 1202,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 1197,
+            "y1": 616,
+            "x2": 1267,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 92,
+            "y1": 140,
+            "x2": 162,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 157,
+            "y1": 168,
+            "x2": 227,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 92,
+            "y1": 140,
+            "x2": 162,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 157,
+            "y1": 168,
+            "x2": 227,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 35,
+      "timestamp_sec": 1.75,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 94,
+            "y1": 140,
+            "x2": 164,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 159,
+            "y1": 168,
+            "x2": 229,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 224,
+            "y1": 196,
+            "x2": 294,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 289,
+            "y1": 224,
+            "x2": 359,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 354,
+            "y1": 252,
+            "x2": 424,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 419,
+            "y1": 280,
+            "x2": 489,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 484,
+            "y1": 308,
+            "x2": 554,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 549,
+            "y1": 336,
+            "x2": 619,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 614,
+            "y1": 364,
+            "x2": 684,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 679,
+            "y1": 392,
+            "x2": 749,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 744,
+            "y1": 420,
+            "x2": 814,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 809,
+            "y1": 448,
+            "x2": 879,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 874,
+            "y1": 476,
+            "x2": 944,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 939,
+            "y1": 504,
+            "x2": 1009,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 1004,
+            "y1": 532,
+            "x2": 1074,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 1069,
+            "y1": 560,
+            "x2": 1139,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 1134,
+            "y1": 588,
+            "x2": 1204,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 1199,
+            "y1": 616,
+            "x2": 1269,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 94,
+            "y1": 140,
+            "x2": 164,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 159,
+            "y1": 168,
+            "x2": 229,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 94,
+            "y1": 140,
+            "x2": 164,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 159,
+            "y1": 168,
+            "x2": 229,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        }
+      ]
+    },
+    {
+      "frame_index": 40,
+      "timestamp_sec": 2,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 96,
+            "y1": 140,
+            "x2": 166,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 161,
+            "y1": 168,
+            "x2": 231,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 226,
+            "y1": 196,
+            "x2": 296,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 291,
+            "y1": 224,
+            "x2": 361,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 356,
+            "y1": 252,
+            "x2": 426,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 421,
+            "y1": 280,
+            "x2": 491,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 486,
+            "y1": 308,
+            "x2": 556,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 551,
+            "y1": 336,
+            "x2": 621,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 616,
+            "y1": 364,
+            "x2": 686,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 681,
+            "y1": 392,
+            "x2": 751,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 746,
+            "y1": 420,
+            "x2": 816,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 811,
+            "y1": 448,
+            "x2": 881,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 876,
+            "y1": 476,
+            "x2": 946,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 941,
+            "y1": 504,
+            "x2": 1011,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 1006,
+            "y1": 532,
+            "x2": 1076,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 1071,
+            "y1": 560,
+            "x2": 1141,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 1136,
+            "y1": 588,
+            "x2": 1206,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 1201,
+            "y1": 616,
+            "x2": 1271,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 96,
+            "y1": 140,
+            "x2": 166,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 161,
+            "y1": 168,
+            "x2": 231,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 96,
+            "y1": 140,
+            "x2": 166,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 161,
+            "y1": 168,
+            "x2": 231,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 45,
+      "timestamp_sec": 2.25,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 98,
+            "y1": 140,
+            "x2": 168,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 163,
+            "y1": 168,
+            "x2": 233,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 228,
+            "y1": 196,
+            "x2": 298,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 293,
+            "y1": 224,
+            "x2": 363,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 358,
+            "y1": 252,
+            "x2": 428,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 423,
+            "y1": 280,
+            "x2": 493,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 488,
+            "y1": 308,
+            "x2": 558,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 553,
+            "y1": 336,
+            "x2": 623,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 618,
+            "y1": 364,
+            "x2": 688,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 683,
+            "y1": 392,
+            "x2": 753,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 748,
+            "y1": 420,
+            "x2": 818,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 813,
+            "y1": 448,
+            "x2": 883,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 878,
+            "y1": 476,
+            "x2": 948,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 943,
+            "y1": 504,
+            "x2": 1013,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 1008,
+            "y1": 532,
+            "x2": 1078,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 1073,
+            "y1": 560,
+            "x2": 1143,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 1138,
+            "y1": 588,
+            "x2": 1208,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1203,
+            "y1": 616,
+            "x2": 1273,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 98,
+            "y1": 140,
+            "x2": 168,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 163,
+            "y1": 168,
+            "x2": 233,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 98,
+            "y1": 140,
+            "x2": 168,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 163,
+            "y1": 168,
+            "x2": 233,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 50,
+      "timestamp_sec": 2.5,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 100,
+            "y1": 140,
+            "x2": 170,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 165,
+            "y1": 168,
+            "x2": 235,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 230,
+            "y1": 196,
+            "x2": 300,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 295,
+            "y1": 224,
+            "x2": 365,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 360,
+            "y1": 252,
+            "x2": 430,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 425,
+            "y1": 280,
+            "x2": 495,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 490,
+            "y1": 308,
+            "x2": 560,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 555,
+            "y1": 336,
+            "x2": 625,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 620,
+            "y1": 364,
+            "x2": 690,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 685,
+            "y1": 392,
+            "x2": 755,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 750,
+            "y1": 420,
+            "x2": 820,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 815,
+            "y1": 448,
+            "x2": 885,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 880,
+            "y1": 476,
+            "x2": 950,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 945,
+            "y1": 504,
+            "x2": 1015,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 1010,
+            "y1": 532,
+            "x2": 1080,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 1075,
+            "y1": 560,
+            "x2": 1145,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1140,
+            "y1": 588,
+            "x2": 1210,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1205,
+            "y1": 616,
+            "x2": 1275,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 100,
+            "y1": 140,
+            "x2": 170,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 165,
+            "y1": 168,
+            "x2": 235,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 100,
+            "y1": 140,
+            "x2": 170,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 165,
+            "y1": 168,
+            "x2": 235,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 55,
+      "timestamp_sec": 2.75,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 102,
+            "y1": 140,
+            "x2": 172,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 167,
+            "y1": 168,
+            "x2": 237,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 232,
+            "y1": 196,
+            "x2": 302,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 297,
+            "y1": 224,
+            "x2": 367,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 362,
+            "y1": 252,
+            "x2": 432,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 427,
+            "y1": 280,
+            "x2": 497,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 492,
+            "y1": 308,
+            "x2": 562,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 557,
+            "y1": 336,
+            "x2": 627,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 622,
+            "y1": 364,
+            "x2": 692,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 687,
+            "y1": 392,
+            "x2": 757,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 752,
+            "y1": 420,
+            "x2": 822,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 817,
+            "y1": 448,
+            "x2": 887,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 882,
+            "y1": 476,
+            "x2": 952,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 947,
+            "y1": 504,
+            "x2": 1017,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 1012,
+            "y1": 532,
+            "x2": 1082,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1077,
+            "y1": 560,
+            "x2": 1147,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1142,
+            "y1": 588,
+            "x2": 1212,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1207,
+            "y1": 616,
+            "x2": 1277,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 102,
+            "y1": 140,
+            "x2": 172,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 167,
+            "y1": 168,
+            "x2": 237,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 102,
+            "y1": 140,
+            "x2": 172,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 167,
+            "y1": 168,
+            "x2": 237,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        }
+      ]
+    },
+    {
+      "frame_index": 60,
+      "timestamp_sec": 3,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 104,
+            "y1": 140,
+            "x2": 174,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 169,
+            "y1": 168,
+            "x2": 239,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 234,
+            "y1": 196,
+            "x2": 304,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 299,
+            "y1": 224,
+            "x2": 369,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 364,
+            "y1": 252,
+            "x2": 434,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 429,
+            "y1": 280,
+            "x2": 499,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 494,
+            "y1": 308,
+            "x2": 564,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 559,
+            "y1": 336,
+            "x2": 629,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 624,
+            "y1": 364,
+            "x2": 694,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 689,
+            "y1": 392,
+            "x2": 759,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 754,
+            "y1": 420,
+            "x2": 824,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 819,
+            "y1": 448,
+            "x2": 889,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 884,
+            "y1": 476,
+            "x2": 954,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 949,
+            "y1": 504,
+            "x2": 1019,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 1014,
+            "y1": 532,
+            "x2": 1084,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1079,
+            "y1": 560,
+            "x2": 1149,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1144,
+            "y1": 588,
+            "x2": 1214,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1209,
+            "y1": 616,
+            "x2": 1279,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 104,
+            "y1": 140,
+            "x2": 174,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 169,
+            "y1": 168,
+            "x2": 239,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 104,
+            "y1": 140,
+            "x2": 174,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 169,
+            "y1": 168,
+            "x2": 239,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 65,
+      "timestamp_sec": 3.25,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 106,
+            "y1": 140,
+            "x2": 176,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 171,
+            "y1": 168,
+            "x2": 241,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 236,
+            "y1": 196,
+            "x2": 306,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 301,
+            "y1": 224,
+            "x2": 371,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 366,
+            "y1": 252,
+            "x2": 436,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 431,
+            "y1": 280,
+            "x2": 501,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 496,
+            "y1": 308,
+            "x2": 566,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 561,
+            "y1": 336,
+            "x2": 631,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 626,
+            "y1": 364,
+            "x2": 696,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 691,
+            "y1": 392,
+            "x2": 761,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 756,
+            "y1": 420,
+            "x2": 826,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 821,
+            "y1": 448,
+            "x2": 891,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 886,
+            "y1": 476,
+            "x2": 956,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 951,
+            "y1": 504,
+            "x2": 1021,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 1016,
+            "y1": 532,
+            "x2": 1086,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1081,
+            "y1": 560,
+            "x2": 1151,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1146,
+            "y1": 588,
+            "x2": 1216,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1211,
+            "y1": 616,
+            "x2": 1281,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 106,
+            "y1": 140,
+            "x2": 176,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 171,
+            "y1": 168,
+            "x2": 241,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 106,
+            "y1": 140,
+            "x2": 176,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 171,
+            "y1": 168,
+            "x2": 241,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    },
+    {
+      "frame_index": 70,
+      "timestamp_sec": 3.5,
+      "vehicle_count": 22,
+      "by_class": {
+        "car": 18,
+        "motorcycle": 0,
+        "bus": 2,
+        "truck": 2
+      },
+      "vehicles": [
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 108,
+            "y1": 140,
+            "x2": 178,
+            "y2": 195
+          },
+          "track_id": 1,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 173,
+            "y1": 168,
+            "x2": 243,
+            "y2": 223
+          },
+          "track_id": 2,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 238,
+            "y1": 196,
+            "x2": 308,
+            "y2": 251
+          },
+          "track_id": 3,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 303,
+            "y1": 224,
+            "x2": 373,
+            "y2": 279
+          },
+          "track_id": 4,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 368,
+            "y1": 252,
+            "x2": 438,
+            "y2": 307
+          },
+          "track_id": 5,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 433,
+            "y1": 280,
+            "x2": 503,
+            "y2": 335
+          },
+          "track_id": 6,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 498,
+            "y1": 308,
+            "x2": 568,
+            "y2": 363
+          },
+          "track_id": 7,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 563,
+            "y1": 336,
+            "x2": 633,
+            "y2": 391
+          },
+          "track_id": 8,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.874,
+          "bbox": {
+            "x1": 628,
+            "y1": 364,
+            "x2": 698,
+            "y2": 419
+          },
+          "track_id": 9,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.886,
+          "bbox": {
+            "x1": 693,
+            "y1": 392,
+            "x2": 763,
+            "y2": 447
+          },
+          "track_id": 10,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 758,
+            "y1": 420,
+            "x2": 828,
+            "y2": 475
+          },
+          "track_id": 11,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 823,
+            "y1": 448,
+            "x2": 893,
+            "y2": 503
+          },
+          "track_id": 12,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.922,
+          "bbox": {
+            "x1": 888,
+            "y1": 476,
+            "x2": 958,
+            "y2": 531
+          },
+          "track_id": 13,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.934,
+          "bbox": {
+            "x1": 953,
+            "y1": 504,
+            "x2": 1023,
+            "y2": 559
+          },
+          "track_id": 14,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.946,
+          "bbox": {
+            "x1": 1018,
+            "y1": 532,
+            "x2": 1088,
+            "y2": 587
+          },
+          "track_id": 15,
+          "direction": "inbound",
+          "crossed_tripwire": true
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.958,
+          "bbox": {
+            "x1": 1083,
+            "y1": 560,
+            "x2": 1153,
+            "y2": 615
+          },
+          "track_id": 16,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.85,
+          "bbox": {
+            "x1": 1148,
+            "y1": 588,
+            "x2": 1218,
+            "y2": 643
+          },
+          "track_id": 17,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "car",
+          "confidence": 0.862,
+          "bbox": {
+            "x1": 1213,
+            "y1": 616,
+            "x2": 1283,
+            "y2": 671
+          },
+          "track_id": 18,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 108,
+            "y1": 140,
+            "x2": 178,
+            "y2": 195
+          },
+          "track_id": 19,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "bus",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 173,
+            "y1": 168,
+            "x2": 243,
+            "y2": 223
+          },
+          "track_id": 20,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.898,
+          "bbox": {
+            "x1": 108,
+            "y1": 140,
+            "x2": 178,
+            "y2": 195
+          },
+          "track_id": 21,
+          "direction": "inbound",
+          "crossed_tripwire": false
+        },
+        {
+          "vehicle_class": "truck",
+          "confidence": 0.91,
+          "bbox": {
+            "x1": 173,
+            "y1": 168,
+            "x2": 243,
+            "y2": 223
+          },
+          "track_id": 22,
+          "direction": "outbound",
+          "crossed_tripwire": false
+        }
+      ]
+    }
+  ]
+}

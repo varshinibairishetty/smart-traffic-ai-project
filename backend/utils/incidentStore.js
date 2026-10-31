@@ -12,7 +12,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { enrichWithGeofence } = require('./geofence');
 
 const DATA_DIR = path.resolve(__dirname, '../data');
 const DB_FILE = path.resolve(DATA_DIR, 'incidents.json');
@@ -148,11 +147,10 @@ class IncidentStore {
    */
   save(incident) {
     const timestamp = incident.timestamp || new Date().toISOString();
-    const enriched = enrichWithGeofence(incident);
-    const node = enriched.node_location;
-    const zoneId = enriched.zone_id || node.toLowerCase().replace(/\s+/g, '-');
-    const subZone = enriched.sub_zone;
-    const coordinates = enriched.coordinates;
+    const node = incident.node_location || incident.location || 'HITEC City';
+    const zoneId = incident.zone_id || node.toLowerCase().replace(/\s+/g, '-');
+    const subZone = incident.sub_zone || node;
+    const coordinates = incident.coordinates || [17.4435, 78.3772];
     const riskScore = incident.risk_score !== undefined ? incident.risk_score : (incident.score || 70);
     const severity = incident.severity || (riskScore >= 85 ? 'Critical' : riskScore >= 67 ? 'High' : riskScore >= 35 ? 'Medium' : 'Low');
     const status = incident.status || 'Active';
@@ -181,7 +179,6 @@ class IncidentStore {
       zone_id: zoneId,
       sub_zone: subZone,
       coordinates,
-      geofence: enriched.geofence,
       risk_score: riskScore,
       severity,
       status,
@@ -222,14 +219,25 @@ class IncidentStore {
   }
 
   /**
-   * Update the status of an incident (e.g., 'Active' -> 'Resolved').
+   * Update the status of an incident (e.g., 'Active', 'Dispatched', or 'Resolved').
    */
   updateStatus(id, newStatus) {
     const item = this.memoryCache.find(i => i.id === id);
     if (!item) return null;
 
-    item.status = newStatus === 'Resolved' ? 'Resolved' : 'Active';
-    item.resolved_at = item.status === 'Resolved' ? new Date().toISOString() : null;
+    const validStatuses = ['Active', 'Dispatched', 'Resolved'];
+    const matched = validStatuses.find(s => s.toLowerCase() === (newStatus || '').toLowerCase());
+    item.status = matched || (newStatus === 'Resolved' ? 'Resolved' : 'Active');
+
+    if (item.status === 'Resolved') {
+      item.resolved_at = new Date().toISOString();
+    } else if (item.status === 'Dispatched') {
+      item.dispatched_at = new Date().toISOString();
+      item.resolved_at = null;
+    } else {
+      item.resolved_at = null;
+    }
+
     this._persist();
     return item;
   }
@@ -241,6 +249,7 @@ class IncidentStore {
     const all = this.memoryCache;
     const total = all.length;
     const active = all.filter(i => (i.status || 'Active') === 'Active').length;
+    const dispatched = all.filter(i => i.status === 'Dispatched').length;
     const resolved = all.filter(i => i.status === 'Resolved').length;
 
     // By location
@@ -263,6 +272,7 @@ class IncidentStore {
     return {
       total_incidents: total,
       active_incidents: active,
+      dispatched_incidents: dispatched,
       resolved_incidents: resolved,
       average_risk_score: avgRiskScore,
       by_location: byLocation,

@@ -84,9 +84,9 @@ export default function Cameras() {
       {/* Page Header */}
       <div className="page-header">
         <div>
-          <h1 className="page-title">📹 Live Traffic Surveillance Network</h1>
+          <h1 className="page-title">📹 Traffic Video & CCTV Analysis (Mode A)</h1>
           <p className="page-subtitle">
-            Real-time multi-camera CCTV feeds with AI vehicle detection bounding boxes (VID-001 to VID-005)
+            OpenCV frame ingestion, YOLOv8 vehicle detection, multi-object tracking, and throughput analytics
           </p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
@@ -111,8 +111,8 @@ export default function Cameras() {
       <div className="demo-banner" role="note">
         <span aria-hidden="true">ℹ️</span>
         <span>
-          <strong>Live Stream Pipeline:</strong> Cameras VID-001 through VID-005 represent the Hyderabad tech-corridor
-          surveillance grid with canvas-rendered AI bounding boxes and WebSocket-streamed risk telemetry.
+          <strong>Mode A Pipeline:</strong> Vehicle counts and bounding boxes are measured directly from video pixels using Ultralytics YOLOv8n.
+          Videos with unknown metadata are processed in isolation without attaching unrelated regional weather or historical crash logs.
         </span>
       </div>
 

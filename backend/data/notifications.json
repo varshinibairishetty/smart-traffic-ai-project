@@ -1,5 +1,856 @@
 [
   {
+    "id": "NOTIF-20261029-037",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-29T12:01:34.957Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793275294957",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-29T12:01:34.957Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-29T12:01:34.957Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-29T12:01:34.957Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261029-036",
+    "incident_id": "INC-HIGH-1793275294926",
+    "timestamp": "2026-10-29T12:01:34.926Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793275294926",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-29T12:01:34.926Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-29T12:01:34.926Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-29T12:01:34.926Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-035",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T16:40:11.951Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793205611951",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:40:11.951Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:40:11.951Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T16:40:11.951Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-034",
+    "incident_id": "INC-HIGH-1793205611906",
+    "timestamp": "2026-10-28T16:40:11.906Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793205611906",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:40:11.906Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:40:11.906Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T16:40:11.906Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-033",
+    "incident_id": "INC-TEST-5585",
+    "timestamp": "2026-10-28T16:20:55.585Z",
+    "node_location": "Madhapur",
+    "zone_id": "hitec-city",
+    "sub_zone": "Metro Pillar 1042 Corridor",
+    "risk_score": 86,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Metro Pillar 1042 Corridor (Rt: 86). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Metro Pillar 1042 Corridor (Rt=86)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.585Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 125,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.585Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T16:20:55.585Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-032",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T16:20:55.440Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793204455440",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.440Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.440Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T16:20:55.440Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-031",
+    "incident_id": "INC-HIGH-1793204455398",
+    "timestamp": "2026-10-28T16:20:55.398Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793204455398",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.398Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T16:20:55.398Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T16:20:55.398Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-030",
+    "incident_id": "INC-TEST-9739",
+    "timestamp": "2026-10-28T14:43:19.739Z",
+    "node_location": "Madhapur",
+    "zone_id": "hitec-city",
+    "sub_zone": "Metro Pillar 1042 Corridor",
+    "risk_score": 86,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Metro Pillar 1042 Corridor (Rt: 86). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Metro Pillar 1042 Corridor (Rt=86)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.739Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 125,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.739Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T14:43:19.739Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-029",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T14:43:19.089Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793198599089",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.089Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.089Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T14:43:19.089Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-028",
+    "incident_id": "INC-HIGH-1793198599045",
+    "timestamp": "2026-10-28T14:43:19.045Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793198599045",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.045Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T14:43:19.045Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T14:43:19.045Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-027",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T13:19:04.742Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793193544742",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T13:19:04.742Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T13:19:04.742Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T13:19:04.742Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-026",
+    "incident_id": "INC-HIGH-1793193544691",
+    "timestamp": "2026-10-28T13:19:04.691Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793193544691",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T13:19:04.691Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T13:19:04.691Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T13:19:04.691Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-025",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T11:14:41.066Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793186081066",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T11:14:41.066Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T11:14:41.066Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T11:14:41.066Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-024",
+    "incident_id": "INC-HIGH-1793186080927",
+    "timestamp": "2026-10-28T11:14:40.927Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793186080927",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T11:14:40.927Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T11:14:40.927Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered (Simulated/Fallback)",
+        "error": "fetch failed",
+        "sent_at": "2026-10-28T11:14:40.927Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-023",
+    "incident_id": "INC-TEST-1920",
+    "timestamp": "2026-10-28T10:30:41.920Z",
+    "node_location": "Madhapur",
+    "zone_id": "hitec-city",
+    "sub_zone": "Metro Pillar 1042 Corridor",
+    "risk_score": 86,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Metro Pillar 1042 Corridor (Rt: 86). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Metro Pillar 1042 Corridor (Rt=86)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.920Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 125,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.920Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:30:41.920Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-022",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T10:30:41.822Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793183441822",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.822Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.822Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:30:41.822Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-021",
+    "incident_id": "INC-HIGH-1793183441698",
+    "timestamp": "2026-10-28T10:30:41.698Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793183441698",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.698Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:30:41.698Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:30:41.698Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-020",
+    "incident_id": "INC-TEST-4365",
+    "timestamp": "2026-10-28T10:26:34.365Z",
+    "node_location": "Madhapur",
+    "zone_id": "hitec-city",
+    "sub_zone": "Metro Pillar 1042 Corridor",
+    "risk_score": 86,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Metro Pillar 1042 Corridor (Rt: 86). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Metro Pillar 1042 Corridor (Rt=86)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:34.365Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 125,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:34.365Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:26:34.365Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-019",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T10:26:34.042Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793183194042",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:34.042Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:34.042Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:26:34.042Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-018",
+    "incident_id": "INC-HIGH-1793183193491",
+    "timestamp": "2026-10-28T10:26:33.491Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793183193491",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:33.491Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:26:33.491Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:26:33.491Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-017",
+    "incident_id": "INC-TEST-7762",
+    "timestamp": "2026-10-28T10:23:27.762Z",
+    "node_location": "Madhapur",
+    "zone_id": "hitec-city",
+    "sub_zone": "Metro Pillar 1042 Corridor",
+    "risk_score": 86,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Metro Pillar 1042 Corridor (Rt: 86). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Metro Pillar 1042 Corridor (Rt=86)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.762Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 125,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.762Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:23:27.762Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-016",
+    "incident_id": "INC-DEDUPE-1",
+    "timestamp": "2026-10-28T10:23:27.649Z",
+    "node_location": "Gachibowli",
+    "zone_id": "zone-dedupe-1793183007649",
+    "sub_zone": "Bio-Diversity Flyover",
+    "risk_score": 85,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Bio-Diversity Flyover (Rt: 85). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Bio-Diversity Flyover (Rt=85)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.649Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 120,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.649Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:23:27.649Z"
+      }
+    }
+  },
+  {
+    "id": "NOTIF-20261028-015",
+    "incident_id": "INC-HIGH-1793183007549",
+    "timestamp": "2026-10-28T10:23:27.549Z",
+    "node_location": "HITEC City",
+    "zone_id": "hitec-test-1793183007549",
+    "sub_zone": "Cyber Towers Flyover",
+    "risk_score": 89,
+    "severity": "Critical",
+    "channels": [
+      "email",
+      "sms",
+      "webhook"
+    ],
+    "status": "Delivered",
+    "summary": "Critical alert at Cyber Towers Flyover (Rt: 89). Dispatched to [email, sms, webhook].",
+    "details": {
+      "email": {
+        "recipient": "controlroom@traffic.hyderabad.gov.in",
+        "subject": "[URGENT] Critical Traffic Incident Alert: Cyber Towers Flyover (Rt=89)",
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.549Z"
+      },
+      "sms": {
+        "recipient": "+91-9876543210",
+        "message_length": 119,
+        "status": "Delivered (Mock)",
+        "sent_at": "2026-10-28T10:23:27.549Z"
+      },
+      "webhook": {
+        "url": "http://localhost:5000/api/notifications/mock-webhook",
+        "status": "Delivered",
+        "http_status": 200,
+        "sent_at": "2026-10-28T10:23:27.549Z"
+      }
+    }
+  },
+  {
     "id": "NOTIF-20261027-014",
     "incident_id": "INC-TEST-3996",
     "timestamp": "2026-10-27T19:38:03.996Z",

@@ -86,7 +86,7 @@ Implemented in [`ai-service/schemas.py`](../../ai-service/schemas.py) and export
 ## 4. Processing Pipeline
 
 ```
-Local .mp4 Video File
+Local .mp4 / .avi Video File
         │
         ▼ (OpenCV: cv2.VideoCapture)
   Raw Frame (NumPy BGR array)
@@ -97,8 +97,17 @@ Local .mp4 Video File
         ▼ (Class Filter: COCO IDs {2, 3, 5, 7} & Confidence >= 0.40)
   Filtered Vehicle Detections
         │
+        ▼ (Multi-Object Tracker: IoU Association & Centroid Trajectory)
+  Persistent Track IDs & Trajectories (track_id, direction)
+        │
+        ▼ (Virtual Tripwire Line Crossing: y = 0.55 * height)
+  Throughput Flow Count (Q) & Distinct Vehicles (N_unique)
+        │
+        ▼ (Stage 4 Corridor Density Analysis: K_sat = 25 veh)
+  Density % (D_t), Flow Classification & Level of Service (LOS)
+        │
         ▼ (Pydantic Serialization)
-  Structured JSON Output  ──▶  detection_output.json / Backend API
+  Structured JSON Output  ──▶  detection_output.json / Socket.io / Backend API
 ```
 
 ---
@@ -107,10 +116,12 @@ Local .mp4 Video File
 
 ```
 ai-service/
-├── main.py             ← FastAPI web application with endpoints
-├── detector.py         ← Core detection pipeline (OpenCV + YOLO)
+├── main.py             ← FastAPI web application with endpoints (including /detect/upload)
+├── detector.py         ← Core detection pipeline (OpenCV + YOLO + Tracker)
+├── tracker.py          ← Multi-Object Vehicle Tracker (IoU + Centroid + Tripwire)
+├── traffic_density.py  ← Stage 4 Corridor Density & Flow Classification Engine
 ├── config.py           ← Configurable thresholds and default paths
-├── schemas.py          ← Pydantic validation models
+├── schemas.py          ← Pydantic validation models (with tracking & density fields)
 ├── risk_calculator.py  ← Python reference implementation of risk formula
 ├── test_detection.py   ← Standalone detection execution script
 ├── yolov8n.pt          ← Model weights file (cached locally)
@@ -132,9 +143,14 @@ Processing 1 frame every 5 frames (`frame_interval=5`) provides a high-fidelity 
 
 ## 7. Explicit Feature Boundaries
 
-- **Implemented:** Frame-level vehicle detection, bounding box localization, vehicle classification, and aggregate summary generation.
+- **Implemented:**
+  - Frame-level vehicle detection, bounding box localization, and 4-class vehicle categorization (`car`, `truck`, `bus`, `motorcycle`).
+  - Multi-Object Tracking (MOT) associating vehicles across consecutive frames with persistent integer tracking IDs (`track_id`).
+  - Trajectory estimation and vehicle direction detection (`inbound` vs. `outbound`).
+  - Virtual tripwire line crossing counting ($Q$) preventing duplicate counts.
+  - Corridor saturation density analysis ($D_t$) against municipal capacity ($K_{\text{sat}} = 25$ veh) and Level of Service (LOS A–F) grading.
+  - Live video file upload validation (`.mp4`, `.avi`, `.mov`) via `POST /detect/upload`.
 - **Not Included:**
-  - Multi-camera feed synchronization.
-  - License plate recognition (ALPR).
-  - Multi-frame object tracking (speed estimation).
-  - Direct crash detection (addressed by the rule-based risk indicator).
+  - License plate recognition (ALPR / ANPR) to protect municipal driver privacy.
+  - Neural re-ID heavy embedding models (SORT baseline is used for zero-cost CPU execution).
+  - Direct crash detection (addressed by the deterministic $R_t$ risk indicator).

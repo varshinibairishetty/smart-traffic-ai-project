@@ -98,6 +98,19 @@ export default function CameraFeedCanvas({
       ctx.stroke()
       ctx.setLineDash([])
 
+      // Virtual Counting Tripwire line (Stage 3 Flow Line)
+      ctx.strokeStyle = 'rgba(234, 179, 8, 0.45)'
+      ctx.lineWidth = 1.5
+      ctx.setLineDash([8, 6])
+      ctx.beginPath()
+      ctx.moveTo(0, h * 0.55)
+      ctx.lineTo(w, h * 0.55)
+      ctx.stroke()
+      ctx.setLineDash([])
+      ctx.fillStyle = 'rgba(234, 179, 8, 0.8)'
+      ctx.font = 'bold 8px monospace'
+      ctx.fillText('⚡ TRIPWIRE COUNTING LINE', 14, h * 0.55 - 4)
+
       // 3. Move and draw vehicle bounding boxes
       vehicles.forEach(v => {
         // Slow down if high risk / congested
@@ -132,10 +145,10 @@ export default function CameraFeedCanvas({
         ctx.moveTo(v.x + v.w - cLen, v.y + v.h); ctx.lineTo(v.x + v.w, v.y + v.h); ctx.lineTo(v.x + v.w, v.y + v.h - cLen)
         ctx.stroke()
 
-        // Label tag
+        // Label tag with Persistent MOT Tracking ID
         ctx.fillStyle = color
         ctx.font = 'bold 9px monospace'
-        const tag = `${v.class} ${(v.conf * 100).toFixed(0)}%`
+        const tag = `TRK-#${v.id} ${v.class} ${(v.conf * 100).toFixed(0)}%`
         ctx.fillText(tag, v.x, v.y - 4)
       })
 

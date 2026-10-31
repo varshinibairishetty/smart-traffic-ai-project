@@ -6,10 +6,12 @@
     "zone_id": "hitec-city",
     "risk_score": 91,
     "severity": "Critical",
-    "status": "Resolved",
+    "status": "Active",
     "vehicle_count": 23,
     "description": "Heavy queue spillover at Cyber Towers junction. Signal clearance cycle extended.",
-    "source": "historical_detection"
+    "source": "historical_detection",
+    "dispatched_at": "2026-10-28T11:32:23.262Z",
+    "resolved_at": null
   },
   {
     "id": "INC-20261027-002",
@@ -18,10 +20,11 @@
     "zone_id": "gachibowli",
     "risk_score": 74,
     "severity": "High",
-    "status": "Resolved",
+    "status": "Active",
     "vehicle_count": 19,
     "description": "Bus breakdown on outer lane near Bio-Diversity junction. Tow assistance cleared.",
-    "source": "historical_detection"
+    "source": "historical_detection",
+    "resolved_at": null
   },
   {
     "id": "INC-20261027-003",

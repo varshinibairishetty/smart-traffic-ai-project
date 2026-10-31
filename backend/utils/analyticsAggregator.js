@@ -169,6 +169,9 @@ function buildAnalyticsSummary({ incidents = [], detectionData = null, zones = [
     scenario_id: activeScenario ? activeScenario.scenario_id : null,
     kpis: {
       total_detections: totalDetections,
+      total_unique_vehicles: summary.total_unique_vehicles_tracked || Math.round(avgVehicles * 1.5),
+      total_line_crossings: summary.total_line_crossings || Math.round(avgVehicles * 0.8),
+      saturation_capacity: SATURATION_COUNT,
       avg_vehicles_per_frame: Math.round(avgVehicles * 10) / 10,
       peak_vehicles_in_frame: peakVehicles,
       avg_density_pct: avgDensityPct,

@@ -9,11 +9,12 @@ import { useAuth } from '../context/AuthContext.jsx';
 import NotificationSettingsModal from './NotificationSettingsModal.jsx';
 
 const NAV_LINKS = [
-  { to: '/',          label: '📊 Dashboard',  end: true },
-  { to: '/live-map',  label: '🗺️ Live Map'            },
-  { to: '/incidents', label: '⚠️ Incidents'            },
-  { to: '/analytics', label: '📈 Analytics'            },
-  { to: '/cameras',   label: '📹 Cameras'              },
+  { to: '/',              label: '📊 Dashboard',        end: true },
+  { to: '/cameras',       label: '📹 Video Analysis'             },
+  { to: '/accident-risk', label: '🛡️ Accident Risk'            },
+  { to: '/live-map',      label: '🗺️ Live Map'                 },
+  { to: '/incidents',     label: '⚠️ Incidents'                 },
+  { to: '/analytics',     label: '📈 Analytics'                 },
 ];
 
 export default function NavBar() {

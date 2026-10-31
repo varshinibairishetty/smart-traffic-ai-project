@@ -83,11 +83,6 @@ export async function fetchZones() {
   return apiFetch('/api/zones');
 }
 
-// GET /api/geofences — Geographical bounding boxes, polygons, and sub-zones
-export async function fetchGeofences() {
-  return apiFetch('/api/geofences');
-}
-
 // GET /api/incidents — Persistent incident history with optional filters
 export async function fetchIncidents(params = {}) {
   const query = new URLSearchParams();
@@ -173,4 +168,92 @@ export async function triggerTestNotification(payload = {}) {
     method: 'POST',
     body: JSON.stringify(payload)
   });
+}
+
+// ─── Video Analytics & Tracking Pipeline Endpoints ───────────────────────────
+
+// POST /api/upload-video — Upload and analyze a real traffic video file with YOLOv8
+export async function uploadTrafficVideo(file, metadata = {}) {
+  const formData = new FormData();
+  formData.append('video', file);
+  if (metadata.location_id) {
+    formData.append('location_id', metadata.location_id);
+  }
+  if (metadata.recorded_at) {
+    formData.append('recorded_at', metadata.recorded_at);
+  }
+
+  const token = localStorage.getItem('traffic_ai_token');
+  const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+  const res = await fetch(`${BASE_URL}/api/upload-video`, {
+    method: 'POST',
+    headers,
+    body: formData
+  });
+
+  if (!res.ok) {
+    let errorMsg = `Upload failed with status ${res.status}`;
+    try {
+      const data = await res.json();
+      errorMsg = data.message || data.error || errorMsg;
+    } catch {
+      const text = await res.text();
+      if (text) errorMsg = text;
+    }
+    throw new Error(errorMsg);
+  }
+
+  return res.json();
+}
+
+// GET /api/videos — Retrieve list of local sample traffic videos
+export async function fetchSampleVideos() {
+  return apiFetch('/api/videos');
+}
+
+// POST /api/videos/select — Select and process specific video feed with YOLOv8 & risk calculation
+export async function selectSampleVideo(videoId) {
+  return apiFetch('/api/videos/select', {
+    method: 'POST',
+    body: JSON.stringify({ videoId })
+  });
+}
+
+// GET /api/traffic/density — Retrieve corridor density and flow classification
+export async function fetchTrafficDensity() {
+  return apiFetch('/api/traffic/density');
+}
+
+// POST /api/video/stream-sample — Replay sample video frame stream over Socket.io
+export async function streamSampleVideo() {
+  return apiFetch('/api/video/stream-sample', {
+    method: 'POST'
+  });
+}
+
+// POST /api/video/analyze — Trigger video detection and tracking analysis
+export async function triggerVideoAnalysis(videoPath = 'sample_video/traffic-sample.mp4') {
+  return apiFetch('/api/video/analyze', {
+    method: 'POST',
+    body: JSON.stringify({ video_path: videoPath })
+  });
+}
+
+// ─── Mode B: Location-Based Accident Risk Analysis Endpoints ─────────────────
+
+// GET /api/locations — List configured monitoring locations for Mode B
+export async function fetchLocations() {
+  return apiFetch('/api/locations');
+}
+
+// GET /api/accidents/historical — Retrieve historical accident records and hotspot metrics
+export async function fetchHistoricalAccidents(locationId = null) {
+  const path = locationId ? `/api/accidents/historical/${locationId}` : '/api/accidents/historical';
+  return apiFetch(path);
+}
+
+// GET /api/risk/location/:locationId — Mode B Aligned Location Accident Risk Analysis
+export async function fetchLocationRiskAnalysis(locationId = 'hitec-city', refresh = false) {
+  return apiFetch(`/api/risk/location/${locationId}${refresh ? '?refresh=true' : ''}`);
 }
